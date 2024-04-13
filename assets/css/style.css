@@ -1,4 +1,44 @@
-body {
-  font-family: "M PLUS 2", sans-serif;
-  font-family: "Prompt", sans-serif;
+@import url(/assets/css/reset.css);
+
+/*
+  VARIABLES
+*/
+:root {
+  /* Colors */
+  --text-color-dark: #000;
+  --text-color-medium: #666;
+  --text-hover: #a5a2a5;
+  --white-color: #fff;
+
+  /* Fonts & Typography */
+  --font-primary: "Prompt", Helvetica, Arial, sans-serif;
+  /* --font-primary:"M PLUS 2", sans-serif; */
+
+  --font-size-bigger: 30px;
+  --font-size-big: 21px;
+  --font-size-normal: 16px;
+  --font-size-small: 13px;
+  --font-size-smaller: 11px;
+
+  --line-heigth-bigger: 40px;
+  --line-heigth-big: 30px;
+  --line-heigth-normal: 26px;
+  --line-heigth-small: 18px;
+  --line-heigth-smaller: 16px;
+
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+
+  /* Lenth values */
+  --max-width: min(100%, 1280px);
+}
+
+/*
+  MEDIA QUERIES
+*/
+@media screen and (min-width: 768px) {
+  :root {
+    --font-size-big: 24px;
+    --line-heigth-big: 36px;
+  }
 }

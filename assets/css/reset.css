@@ -1,0 +1,74 @@
+/*
+  RESET STYLES
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html,
+body {
+  min-height: 100%;
+  hyphens: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
