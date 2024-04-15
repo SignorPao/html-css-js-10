@@ -9,6 +9,8 @@
   --text-color-medium: #666;
   --text-hover: #a5a2a5;
   --white-color: #fff;
+  --gray-light-color: #f9f9f9;
+  --gray-medium-color: #b3b3b3;
 
   /* Fonts & Typography */
   --font-primary: "Prompt", Helvetica, Arial, sans-serif;
@@ -20,17 +22,65 @@
   --font-size-small: 13px;
   --font-size-smaller: 11px;
 
-  --line-heigth-bigger: 40px;
-  --line-heigth-big: 30px;
-  --line-heigth-normal: 26px;
-  --line-heigth-small: 18px;
-  --line-heigth-smaller: 16px;
+  --line-height-bigger: 40px;
+  --line-height-big: 30px;
+  --line-height-normal: 26px;
+  --line-height-small: 18px;
+  --line-height-smaller: 16px;
 
   --font-weight-bold: 700;
   --font-weight-normal: 400;
 
   /* Lenth values */
-  --max-width: min(100%, 1280px);
+  --max-width: 1280px;
+  /* --max-width: min(100%, 1280px); */
+  --header-height: 74px;
+  --padding-inline: 24px;
+}
+
+/*
+  BASE
+*/
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color-dark);
+}
+
+/*
+  HEADER
+*/
+header {
+  /* width: var(--max-width); */
+}
+
+.navigation {
+  background-color: var(--white-color);
+  height: var(--header-height);
+}
+
+.mobile__header {
+  padding-inline: var(--padding-inline);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile__header-burger{
+  cursor: pointer;
+}
+
+.mobile__header-search {
+  display: flex;
+  gap: 1rem;
+}
+
+.country__switch-tablet {
+  display: none;
+}
+
+.desktop__header {
+  display: none;
 }
 
 /*
@@ -39,6 +89,50 @@
 @media screen and (min-width: 768px) {
   :root {
     --font-size-big: 24px;
-    --line-heigth-big: 36px;
+    --line-height-big: 36px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .country__switch-tablet {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .mobile__header {
+    display: none;
+  }
+
+  .desktop__header {
+    display: block;
+    height: 100%;
+  }
+  
+  .menu__wrapper {
+    height: 100%;
+    width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navigation__list {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .desktop__header-search {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .country__switch-mobile {
+    display: none;
   }
 }
