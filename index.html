@@ -75,9 +75,12 @@
           </div>
           <ul class="mobile__header-search">
             <li class="search__wrapper">
+              <button class="search__button">search</button>
               <div class="search__input-container">
-                <div class="search__input"></div>
-                <button class="seacrh__button">search</button>
+                <label class="search__input">
+                  <input type="text" placeholder="Enter search term">
+                  <button>search</button>
+                </label>
               </div>
             </li>
             <li class="country__switch-tablet">switch</li>
@@ -119,6 +122,9 @@
         </div>
       </nav>
     </header>
+
+    <!-- body overlay (when menu is open) -->
+    <div class="overlay__body"></div>
 
     <main></main>
 
