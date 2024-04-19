@@ -5,7 +5,8 @@ let menuBtn = document.querySelector(".mobile__header-burger"),
   logo = document.querySelector(".mobile__header-logo"),
   searchMobile = document.querySelector(".search__button"),
   searchMobileContainer = document.querySelector(".search__input-container"),
-  countryMobile = document.querySelector(".country__switch-tablet");
+  countryMobile = document.querySelector(".country__switch-tablet"),
+  subnavMenu = document.querySelectorAll(".subnav");
 
 // mobile menu show / close
 menuBtn.addEventListener("click", function () {
@@ -60,3 +61,14 @@ searchMobile.addEventListener("click", function () {
     overlay.classList.remove("active");
   }
 });
+
+// add / remove body overlay when desktop submenu is open
+const submenuArray = [...subnavMenu];
+console.log(submenuArray);
+for (let i = 0; i < submenuArray.length; i++) {
+  if (submenuArray[i].classList.contains("show-subnav")) {
+    overlay.classList.add("active");
+  } else {
+    overlay.classList.remove("active");
+  }
+}

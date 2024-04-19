@@ -122,7 +122,6 @@ header {
 
 .menu__wrapper {
   height: 100%;
-  /* min-height: max(100%, fit-content); */
 }
 
 .navigation__list {
@@ -140,9 +139,13 @@ header {
 }
 
 .subnav {
-  height: 100%;
+  /* height: 100%; */
   /* height: 0; */
-  overflow: hidden;
+  display: none;
+}
+
+.subnav.show-subnav{
+  display: block;
 }
 
 .subnav__wrapper {
@@ -155,6 +158,7 @@ header {
   flex-direction: column;
   gap: 0.5rem;
   font-size: 0.8em;
+  padding-inline-start: 1rem;
 }
 
 .subnav__list-item {
@@ -212,11 +216,7 @@ main {
   }
 
   .desktop__header {
-    /* height: fit-content; */
-    /* height: var(--header-height); */
     overflow: hidden;
-
-    /* position: relative; */
     background-color: transparent;
     height: calc(100vh - var(--header-height));
     position: absolute;
@@ -230,7 +230,6 @@ main {
 
   .navigation__list {
     flex-direction: row;
-    height: 100%;
     height: var(--header-height);
   }
 
@@ -238,7 +237,6 @@ main {
     height: 100%;
     display: flex;
     align-items: center;
-    cursor: pointer;
   }
 
   .country__switch-mobile {
@@ -250,17 +248,8 @@ main {
     width: 100%;
     left: 0;
     top: 60px;
-    /* height: 0; */
     height: var(--header-height);
     background-color: var(--gray-light-color);
-
-    /* z-index: 99; */
-    /* background-color: var(--white-color); */
-    /* display: none; */
-  }
-
-  .subnav.show-subnav {
-    height: var(--header-height);
   }
 
   .subnav__list {
@@ -284,25 +273,25 @@ main {
   .navigation{
     height: 100%;
   }
-
+  
   .mobile__header {
     display: none;
   }
-
+  
   .desktop__header {
     display: block;
     /* height: 100%; */
+    /* background-color: var(--white-color); */
   }
-
+  
   .menu__wrapper {
-    /* height: 100%; */
     width: var(--max-width);
     margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
+  
   .navigation__list {
     display: flex;
     gap: 1rem;
@@ -310,11 +299,6 @@ main {
 
   .mobile__link {
     display: none;
-  }
-
-  .desktop__header {
-    height: var(--header-height);
-    background-color: var(--white-color);
   }
 
   .desktop__link {
@@ -331,11 +315,17 @@ main {
   }
 
   .subnav {
-    /* display: none; */
-
     height: var(--header-height);
-    /* z-index: 100; */
     top: var(--header-height);
     background-color: var(--gray-light-color);
+  }
+
+  .subnav__wrapper{
+    height: 100%;
+    background-color: inherit;
+  }
+
+  .subnav__list{
+    height: 100%;
   }
 }
