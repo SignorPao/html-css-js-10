@@ -7,7 +7,9 @@ let menuBtn = document.querySelector(".mobile__header-burger"),
   searchMobile = document.querySelector(".search__button"),
   searchMobileContainer = document.querySelector(".search__input-container"),
   countryMobile = document.querySelector(".country__switch-tablet"),
-  subnavAccordionItems = document.querySelectorAll(".navigation__list-item");
+  subnavAccordionItems = document.querySelectorAll(".navigation__list-item"),
+  desktopSearchButton = document.querySelector(".search__desktop-button"),
+  desktopSearchInput = document.querySelector(".search__desktop-input");
 
 // mobile menu show / close
 menuBtn.addEventListener("click", function () {
@@ -108,4 +110,9 @@ logoDesktop.addEventListener("click", function () {
       overlay.classList.remove("active");
     }
   });
+});
+
+// desktop search input expanded
+desktopSearchButton.addEventListener("click", function () {
+  desktopSearchInput.classList.toggle("expanded");
 });
