@@ -83,7 +83,9 @@
                 </label>
               </div>
             </li>
-            <li class="country__switch-tablet">switch</li>
+            <li class="country__switch-tablet">
+              <button>switch</button>
+            </li>
           </ul>
         </div>
         <div class="desktop__header">
@@ -205,16 +207,28 @@
                         <a href="#!" class="subnav__mobile-link">Profile</a>
                       </li>
                       <li class="subnav__list-item">
-                        <a href="#!" class="subnav__desktop-link">Investor Relations</a>
-                        <a href="#!" class="subnav__mobile-link">Investor Relations</a>
+                        <a href="#!" class="subnav__desktop-link"
+                          >Investor Relations</a
+                        >
+                        <a href="#!" class="subnav__mobile-link"
+                          >Investor Relations</a
+                        >
                       </li>
                       <li class="subnav__list-item">
-                        <a href="#!" class="subnav__desktop-link">Compliance & risk management</a>
-                        <a href="#!" class="subnav__mobile-link">Compliance & risk management</a>
+                        <a href="#!" class="subnav__desktop-link"
+                          >Compliance & risk management</a
+                        >
+                        <a href="#!" class="subnav__mobile-link"
+                          >Compliance & risk management</a
+                        >
                       </li>
                       <li class="subnav__list-item">
-                        <a href="#!" class="subnav__desktop-link">Press & Media</a>
-                        <a href="#!" class="subnav__mobile-link">Press & Media</a>
+                        <a href="#!" class="subnav__desktop-link"
+                          >Press & Media</a
+                        >
+                        <a href="#!" class="subnav__mobile-link"
+                          >Press & Media</a
+                        >
                       </li>
                     </ul>
                   </div>
@@ -237,15 +251,19 @@
               <li class="search__desktop-container">
                 <div class="search__desktop-input-wrapper">
                   <label>
-                    <input type="text" class="search__desktop-input">
+                    <input type="text" class="search__desktop-input" />
                     <button>search</button>
                   </label>
                 </div>
                 <button class="search__desktop-button">search desktop</button>
               </li>
-              <li>switch desktop</li>
+              <li class="country__switch-desktop switch__country-button">
+                <button>switch desktop</button>
+              </li>
             </ul>
-            <div class="country__switch-mobile">switch mobile</div>
+            <div class="country__switch-mobile switch__country-button">
+              <button>switch mobile</button>
+            </div>
           </div>
         </div>
       </nav>
@@ -254,11 +272,37 @@
     <!-- body overlay (when menu is open) -->
     <div class="overlay__body"></div>
 
-    <main></main>
+    <main>
+      <section class="switch__country">
+        <div class="section__country-wrapper">
+          <div class="switch__country-text">
+            <h2>Aoodi worldwide</h2>
+            <p>
+              Models, products and services - switch to your country / sales
+              region website and discover the regional diversity of Aoodi.
+            </p>
+            <form>
+              <label>
+                Your country / sales region
+                <input
+                  type="text"
+                  placeholder="Please select your country / sales region"
+                />
+              </label>
+              <button>Switch</button>
+            </form>
+          </div>
+          <div class="switch__country-close">
+            <button>close</button>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer></footer>
 
     <!-- JavaScript -->
+    <noscript>Sorry... JavaScript is needed to go ahead.</noscript>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

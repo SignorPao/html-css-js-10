@@ -1,4 +1,4 @@
-let menuBtn = document.querySelector(".mobile__header-burger"),
+const menuBtn = document.querySelector(".mobile__header-burger"),
   body = document.querySelector("body"),
   links = document.querySelector(".desktop__header"),
   overlay = document.querySelector(".overlay__body"),
@@ -9,7 +9,14 @@ let menuBtn = document.querySelector(".mobile__header-burger"),
   countryMobile = document.querySelector(".country__switch-tablet"),
   subnavAccordionItems = document.querySelectorAll(".navigation__list-item"),
   desktopSearchButton = document.querySelector(".search__desktop-button"),
-  desktopSearchInput = document.querySelector(".search__desktop-input");
+  desktopSearchInput = document.querySelector(".search__desktop-input"),
+  switchMobile = document.querySelector(".country__switch-mobile"),
+  switchTablet = document.querySelector(".country__switch-tablet"),
+  switchDesktop = document.querySelector(".country__switch-desktop"),
+  switchCountrySection = document.querySelector(".switch__country"),
+  switchCountryClose = document.querySelector(
+    ".switch__country-close > button"
+  );
 
 // mobile menu show / close
 menuBtn.addEventListener("click", function () {
@@ -100,7 +107,6 @@ subnavAccordionItems.forEach((item) => {
 
 // remove all when desktop logo clicked
 logoDesktop.addEventListener("click", function () {
-  console.log("desktop logo clicked");
   subnavAccordionItems.forEach((item) => {
     let isShow = item.classList.contains("show-subnav");
     if (isShow) {
@@ -115,4 +121,55 @@ logoDesktop.addEventListener("click", function () {
 // desktop search input expanded
 desktopSearchButton.addEventListener("click", function () {
   desktopSearchInput.classList.toggle("expanded");
+});
+
+// switch country section show / close
+switchMobile.addEventListener("click", function () {
+  switchCountrySection.classList.add("active");
+  if (switchCountrySection.classList.contains("active")) {
+    links.classList.remove("active");
+    overlay.classList.remove("active");
+    body.classList.remove("active");
+    logo.addEventListener("click", function () {
+      switchCountrySection.classList.remove("active");
+    });
+  }
+});
+switchTablet.addEventListener("click", function () {
+  switchCountrySection.classList.add("active");
+  if (switchCountrySection.classList.contains("active")) {
+    links.classList.remove("active");
+    overlay.classList.remove("active");
+    body.classList.remove("active");
+    logo.addEventListener("click", function () {
+      switchCountrySection.classList.remove("active");
+    });
+    logoDesktop.addEventListener("click", function () {
+      switchCountrySection.classList.remove("active");
+    });
+  }
+});
+switchDesktop.addEventListener("click", function () {
+  switchCountrySection.classList.add("active");
+  if (switchCountrySection.classList.contains("active")) {
+    links.classList.remove("active");
+    overlay.classList.remove("active");
+    body.classList.remove("active");
+    logo.addEventListener("click", function () {
+      switchCountrySection.classList.remove("active");
+    });
+    logoDesktop.addEventListener("click", function () {
+      switchCountrySection.classList.remove("active");
+    });
+    subnavAccordionItems.forEach((item) => {
+      let isShow = item.classList.contains("show-subnav");
+      if (isShow) {
+        item.classList.remove("show-subnav");
+      }
+    });
+  }
+});
+
+switchCountryClose.addEventListener("click", function () {
+  switchCountrySection.classList.remove("active");
 });
