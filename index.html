@@ -67,19 +67,46 @@
           </div>
           <div class="mobile__header-logo">
             <a href="#">
-              <!-- <svg width="90" heigth="32">
-                <use href="/assets/icons/aoodi.svg#logo" width="100%" heigth="100%"></use>
-              </svg> -->
-              logo
+              <svg class="mobile__logo-icon" width="90" height="32">
+                <use
+                  xlink:href="/assets/icons/aoodi.svg#logo"
+                  width="100%"
+                  height="100%"
+                  fill="currentColor"
+                ></use>
+              </svg>
             </a>
           </div>
           <ul class="mobile__header-search">
             <li class="search__wrapper">
-              <button class="search__button">search</button>
+              <button class="search__button">
+                <svg class="search__button-search" width="26" height="26">
+                  <use
+                    xlink:href="/assets/icons/search.svg#search"
+                    width="100%"
+                    height="100%"
+                  ></use>
+                </svg>
+                <svg class="search__button-close" width="13" height="13">
+                  <use
+                    xlink:href="/assets/icons/close.svg#close"
+                    width="100%"
+                    height="100%"
+                  ></use>
+                </svg>
+              </button>
               <div class="search__input-container">
                 <label class="search__input">
                   <input type="text" placeholder="Enter search term" />
-                  <button>search</button>
+                  <button>
+                    <svg width="24" height="24">
+                      <use
+                        xlink:href="/assets/icons/search.svg#search"
+                        width="100%"
+                        height="100%"
+                      ></use>
+                    </svg>
+                  </button>
                 </label>
               </div>
             </li>

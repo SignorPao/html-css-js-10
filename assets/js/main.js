@@ -1,4 +1,5 @@
 const menuBtn = document.querySelector(".mobile__header-burger"),
+  burgerIcon = document.querySelector(".burger__icon"),
   body = document.querySelector("body"),
   links = document.querySelector(".desktop__header"),
   overlay = document.querySelector(".overlay__body"),
@@ -20,6 +21,7 @@ const menuBtn = document.querySelector(".mobile__header-burger"),
 
 // mobile menu show / close
 menuBtn.addEventListener("click", function () {
+  burgerIcon.classList.toggle("open");
   links.classList.toggle("active");
   body.classList.toggle("active");
   overlay.classList.toggle("active");
@@ -37,6 +39,7 @@ window.addEventListener("resize", function () {
     body.classList.remove("active");
     links.classList.remove("active");
     overlay.classList.remove("active");
+    burgerIcon.classList.remove("open");
   }
   subnavAccordionItems.forEach((item) => {
     item.classList.remove("show-subnav");
@@ -52,6 +55,11 @@ searchMobile.addEventListener("click", function () {
   searchMobileContainer.classList.toggle("opened");
 });
 
+// mobile search icon
+if (searchMobileContainer.classList.contains("opened")) {
+  document.querySelector(".search__button-search").style.display = "none";
+}
+
 // remove mobile menu & body overlay when logo clicked
 logo.addEventListener("click", function () {
   if (body.classList.contains("active")) {
@@ -59,6 +67,7 @@ logo.addEventListener("click", function () {
     links.classList.remove("active");
     overlay.classList.remove("active");
     searchMobileContainer.classList.remove("opened");
+    burgerIcon.classList.remove("open");
   }
 });
 
@@ -82,6 +91,7 @@ searchMobile.addEventListener("click", function () {
     links.classList.remove("active");
     body.classList.remove("active");
     overlay.classList.remove("active");
+    burgerIcon.classList.remove("open");
   }
 });
 
@@ -133,8 +143,10 @@ switchMobile.addEventListener("click", function () {
     logo.addEventListener("click", function () {
       switchCountrySection.classList.remove("active");
     });
+    burgerIcon.classList.remove("open");
   }
 });
+
 switchTablet.addEventListener("click", function () {
   switchCountrySection.classList.add("active");
   if (switchCountrySection.classList.contains("active")) {
@@ -147,8 +159,10 @@ switchTablet.addEventListener("click", function () {
     logoDesktop.addEventListener("click", function () {
       switchCountrySection.classList.remove("active");
     });
+    burgerIcon.classList.remove("open");
   }
 });
+
 switchDesktop.addEventListener("click", function () {
   switchCountrySection.classList.add("active");
   if (switchCountrySection.classList.contains("active")) {
