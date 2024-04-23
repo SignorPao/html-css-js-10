@@ -1,6 +1,8 @@
 const menuBtn = document.querySelector(".mobile__header-burger"),
   burgerIcon = document.querySelector(".burger__icon"),
   body = document.querySelector("body"),
+  html = document.querySelector("html"),
+  mobileHeader = document.querySelector(".mobile__header"),
   links = document.querySelector(".desktop__header"),
   overlay = document.querySelector(".overlay__body"),
   logo = document.querySelector(".mobile__header-logo"),
@@ -23,7 +25,14 @@ const menuBtn = document.querySelector(".mobile__header-burger"),
 menuBtn.addEventListener("click", function () {
   burgerIcon.classList.toggle("open");
   links.classList.toggle("active");
+
+  // if (links.classList.contains("active")) {
+  //   body.classList.add("active");
+  // } else {
+  //   body.classList.remove("active");
+  // }
   body.classList.toggle("active");
+
   overlay.classList.toggle("active");
   subnavAccordionItems.forEach((item) => {
     let isShow = item.classList.contains("show-subnav");
@@ -35,6 +44,7 @@ menuBtn.addEventListener("click", function () {
     document.querySelector(".search__button-search").style.display = "block";
     document.querySelector(".search__button-close").style.display = "none";
   }
+  mobileHeader.classList.remove("mobile-shadow");
 });
 
 // delete styles when window resize
@@ -61,9 +71,11 @@ searchMobile.addEventListener("click", function () {
   if (searchMobileContainer.classList.contains("opened")) {
     document.querySelector(".search__button-search").style.display = "none";
     document.querySelector(".search__button-close").style.display = "block";
+    mobileHeader.classList.add("mobile-shadow");
   } else {
     document.querySelector(".search__button-search").style.display = "block";
     document.querySelector(".search__button-close").style.display = "none";
+    mobileHeader.classList.remove("mobile-shadow");
   }
 });
 
@@ -75,7 +87,13 @@ logo.addEventListener("click", function () {
     overlay.classList.remove("active");
     searchMobileContainer.classList.remove("opened");
     burgerIcon.classList.remove("open");
+
+    // html.classList.remove("show-switch-country");
   }
+  if (html.classList.contains("show-switch-country")) {
+    html.classList.remove("show-switch-country");
+  }
+  mobileHeader.classList.remove("mobile-shadow");
 });
 
 // remove mobile search panel when logo clicked
@@ -154,6 +172,12 @@ switchMobile.addEventListener("click", function () {
     });
     burgerIcon.classList.remove("open");
   }
+
+  if (switchCountrySection.classList.contains("active")) {
+    html.classList.add("show-switch-country");
+  } else {
+    html.classList.remove("show-switch-country");
+  }
 });
 
 switchTablet.addEventListener("click", function () {
@@ -195,4 +219,6 @@ switchDesktop.addEventListener("click", function () {
 
 switchCountryClose.addEventListener("click", function () {
   switchCountrySection.classList.remove("active");
+  // body.classList.remove("active");
+  html.classList.remove("show-switch-country");
 });
