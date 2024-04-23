@@ -10,6 +10,7 @@
   --text-hover: #a5a2a5;
   --white-color: #fff;
   --gray-light-color: #f9f9f9;
+  --gray-light-color-2: #e5e5e5;
   --gray-medium-color: #b3b3b3;
 
   /* Fonts & Typography */
@@ -29,6 +30,7 @@
   --line-height-smaller: 16px;
 
   --font-weight-bold: 700;
+  --font-weight-semibold: 600;
   --font-weight-normal: 400;
   --font-weight-thin: 300;
 
@@ -38,7 +40,9 @@
   --padding-inline: 24px;
 
   /* Other values */
-  --transition-fast: ease-in-out 150ms;
+  --transition-fast: ease-out 150ms;
+  --transition-normal: ease-out 300ms;
+  --transition-slow: ease-out 500ms;
 }
 
 /*
@@ -47,6 +51,8 @@
 body {
   font-family: var(--font-primary);
   color: var(--text-color-dark);
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height-normal);
 }
 
 body.active {
@@ -165,6 +171,11 @@ header {
   transition: color var(--transition-fast);
 }
 
+.mobile__header-logo {
+  position: absolute;
+  left: calc(50% - 45px);
+}
+
 .mobile__header-logo a:hover {
   color: var(--text-color-medium);
 }
@@ -178,10 +189,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.search__button-search {
-  display: block;
+  width: 26px;
+  height: 26px;
 }
 
 .search__button-close {
@@ -211,15 +220,23 @@ header {
 }
 
 .desktop__header {
-  display: none;
-  height: calc(100vh - var(--header-height));
+  /* display: none; */
   position: relative;
-  overflow-y: scroll;
   background-color: var(--gray-light-color);
+  /* height: calc(100vh - var(--header-height)); */
+  /* overflow-y: scroll; */
+  padding-inline: 0;
+
+  height: 0;
+  transition: height var(--transition-normal);
+  overflow: hidden;
+  /* padding-block-end: 3rem; */
 }
 
 .desktop__header.active {
-  display: block;
+  height: calc(100vh - var(--header-height));
+  /* display: block; */
+  overflow-y: scroll;
 }
 
 .menu__wrapper {
@@ -230,10 +247,30 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-inline: var(--padding-inline);
+}
+
+.navigation__list-item {
+  border-bottom: 1px solid var(--gray-light-color-2);
+}
+
+.list__title {
+  letter-spacing: 0.6px;
+  padding-block: 18px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
 }
 
 .desktop__link {
   display: none;
+}
+
+.mobile__menu-arrow {
+  display: block;
+  transition: transform var(--transition-fast);
+  position: relative;
 }
 
 .desktop__header-search {
@@ -241,28 +278,82 @@ header {
 }
 
 .subnav {
-  display: none;
+  /* display: none; */
+
+  /* transition: height var(--transition-slow); */
+  transition: all var(--transition-fast);
+  height: 0;
+  /* position: relative; */
+  overflow: hidden;
+  padding-block: 0;
 }
 
 .navigation__list-item.show-subnav .subnav {
-  display: block;
+  /* display: block; */
+
+  height: auto;
+  padding-block: 5px;
+}
+
+.navigation__list-item.show-subnav .mobile__menu-arrow {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+}
+
+.navigation__list-item.show-subnav .list__title a {
+  font-weight: var(--font-weight-semibold);
 }
 
 .subnav__wrapper {
   max-width: var(--max-width);
   margin-inline: auto;
+  padding-block: 10px;
 }
 
 .subnav__list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 0.8em;
-  padding-inline-start: 1rem;
+  font-weight: var(--font-weight-thin);
+}
+
+.subnav__list-item {
+  padding-block: 6px 12px;
 }
 
 .subnav__desktop-link {
   display: none;
+}
+
+.country__switch-mobile {
+  margin: 2rem 1rem 0 1rem;
+  padding-block-end: 2rem;
+  border-block-end: 1px solid transparent;
+}
+
+.country__switch-mobile > button {
+  border: 1px solid var(--text-color-medium);
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.country__switch-mobile > button img {
+  width: 26px;
+}
+
+.country__switch-mobile > button p:first-of-type {
+  font-size: var(--font-size-smaller);
+  line-height: var(--line-height-smaller);
+  color: var(--gray-medium-color);
+}
+
+.country__switch-mobile > button p:last-of-type {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
 }
 
 /* body overlay */
@@ -348,9 +439,11 @@ main {
   .desktop__header {
     overflow: hidden;
     background-color: transparent;
-    height: calc(100vh - var(--header-height));
+    /* height: calc(100vh - var(--header-height)); */
     position: absolute;
     width: 100vw;
+
+    height: 0;
   }
 
   .menu__wrapper {
@@ -410,6 +503,8 @@ main {
 
   .desktop__header {
     display: block;
+
+    height: calc(100vh - var(--header-height));
   }
 
   .menu__wrapper {

@@ -31,6 +31,10 @@ menuBtn.addEventListener("click", function () {
       item.classList.remove("show-subnav");
     }
   });
+  if (links.classList.contains("active")) {
+    document.querySelector(".search__button-search").style.display = "block";
+    document.querySelector(".search__button-close").style.display = "none";
+  }
 });
 
 // delete styles when window resize
@@ -53,12 +57,15 @@ window.addEventListener("resize", function () {
 // open / close mobile search panel
 searchMobile.addEventListener("click", function () {
   searchMobileContainer.classList.toggle("opened");
+  // change mobile search icon
+  if (searchMobileContainer.classList.contains("opened")) {
+    document.querySelector(".search__button-search").style.display = "none";
+    document.querySelector(".search__button-close").style.display = "block";
+  } else {
+    document.querySelector(".search__button-search").style.display = "block";
+    document.querySelector(".search__button-close").style.display = "none";
+  }
 });
-
-// mobile search icon
-if (searchMobileContainer.classList.contains("opened")) {
-  document.querySelector(".search__button-search").style.display = "none";
-}
 
 // remove mobile menu & body overlay when logo clicked
 logo.addEventListener("click", function () {
@@ -75,6 +82,8 @@ logo.addEventListener("click", function () {
 logo.addEventListener("click", function () {
   if (searchMobileContainer.classList.contains("opened")) {
     searchMobileContainer.classList.remove("opened");
+    document.querySelector(".search__button-search").style.display = "block";
+    document.querySelector(".search__button-close").style.display = "none";
   }
 });
 
