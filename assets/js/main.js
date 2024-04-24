@@ -153,11 +153,17 @@ logoDesktop.addEventListener("click", function () {
       overlay.classList.remove("active");
     }
   });
+  desktopSearchInput.classList.remove("expanded");
 });
 
 // desktop search input expanded
 desktopSearchButton.addEventListener("click", function () {
   desktopSearchInput.classList.toggle("expanded");
+  if (desktopSearchInput.classList.contains("expanded")) {
+    desktopSearchButton.textContent = "Close";
+  } else {
+    desktopSearchButton.textContent = "Search";
+  }
 });
 
 // switch country section show / close

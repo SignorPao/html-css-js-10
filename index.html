@@ -110,8 +110,13 @@
                 </label>
               </div>
             </li>
+            <li class="mobile__search-divider">
+              <span></span>
+            </li>
             <li class="country__switch-tablet">
-              <button>switch</button>
+              <button>
+                <img src="/assets/icons/globe.svg" alt="globe icon" />
+              </button>
             </li>
           </ul>
         </div>
@@ -119,7 +124,16 @@
           <div class="menu__wrapper">
             <ul class="navigation__list">
               <li class="desktop__header-logo">
-                <a href="#" class="desktop__link">logo</a>
+                <a href="#" class="desktop__link">
+                  <svg class="" width="69" height="24">
+                    <use
+                      xlink:href="/assets/icons/aoodi.svg#logo"
+                      width="100%"
+                      height="100%"
+                      fill="currentColor"
+                    ></use>
+                  </svg>
+                </a>
               </li>
               <li class="navigation__list-item">
                 <div class="list__title">
@@ -390,14 +404,35 @@
               <li class="search__desktop-container">
                 <div class="search__desktop-input-wrapper">
                   <label>
-                    <input type="text" class="search__desktop-input" />
-                    <button>search</button>
+                    <input
+                      type="text"
+                      class="search__desktop-input"
+                      placeholder="Enter search term"
+                    />
+                    <button class="seacrh__desktop-button-inner">
+                      <svg class="" width="26" height="26">
+                        <use
+                          xlink:href="/assets/icons/search.svg#search"
+                          width="100%"
+                          height="100%"
+                        ></use>
+                      </svg>
+                    </button>
                   </label>
                 </div>
-                <button class="search__desktop-button">search desktop</button>
+                <button class="search__desktop-button">Search</button>
+              </li>
+              <li class="desktop__search-divider">
+                <span></span>
               </li>
               <li class="country__switch-desktop switch__country-button">
-                <button>switch desktop</button>
+                <button>
+                  <img src="/assets/icons/globe.svg" alt="globe icon" />
+                  <div>
+                    <p>Aoodi in your Region:</p>
+                    <p>Global</p>
+                  </div>
+                </button>
               </li>
             </ul>
             <div class="country__switch-mobile switch__country-button">
