@@ -2,6 +2,7 @@ const menuBtn = document.querySelector(".mobile__header-burger"),
   burgerIcon = document.querySelector(".burger__icon"),
   body = document.querySelector("body"),
   html = document.querySelector("html"),
+  navigation = document.querySelector(".navigation"),
   mobileHeader = document.querySelector(".mobile__header"),
   links = document.querySelector(".desktop__header"),
   overlay = document.querySelector(".overlay__body"),
@@ -217,4 +218,17 @@ switchDesktop.addEventListener("click", function () {
 switchCountryClose.addEventListener("click", function () {
   switchCountrySection.classList.remove("active");
   html.classList.remove("show-switch-country");
+});
+
+// remove desktop overlay when click ouside header element
+document.addEventListener("click", function (e) {
+  if (!navigation.contains(e.target)) {
+    overlay.classList.remove("active");
+    subnavAccordionItems.forEach((item) => {
+      let isShow = item.classList.contains("show-subnav");
+      if (isShow) {
+        item.classList.remove("show-subnav");
+      }
+    });
+  }
 });
