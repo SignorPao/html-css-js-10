@@ -56,6 +56,7 @@ body {
   color: var(--text-color-dark);
   font-size: var(--font-size-normal);
   line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
 }
 
 body.active {
@@ -98,6 +99,7 @@ header {
   background-color: var(--white-color);
 }
 
+/* mobile navigation */
 .mobile__header {
   height: var(--header-height);
   padding-inline: var(--padding-inline);
@@ -228,17 +230,6 @@ header {
 }
 
 .search__input-container {
-  /* position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
-  background-color: var(--white-color);
-  transition: all var(--transition-fast);
-  height: 0;
-  overflow: hidden;
-  top: var(--header-height);
-  padding: 0; */
-
   position: absolute;
   top: 100%;
   right: 0;
@@ -254,10 +245,6 @@ header {
 }
 
 .search__input-container.opened {
-  /* z-index: -1;
-  height: auto;
-  padding-block: 12px; */
-
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
 }
@@ -288,23 +275,18 @@ header {
   display: none;
 }
 
+/* desktop navigation */
 .desktop__header {
-  /* display: none; */
   position: relative;
   background-color: var(--gray-light-color);
-  /* height: calc(100vh - var(--header-height)); */
-  /* overflow-y: scroll; */
   padding-inline: 0;
-
   height: 0;
   transition: height var(--transition-normal);
   overflow: hidden;
-  /* padding-block-end: 3rem; */
 }
 
 .desktop__header.active {
   height: calc(100vh - var(--header-height));
-  /* display: block; */
   overflow-y: scroll;
 }
 
@@ -356,21 +338,12 @@ header {
 }
 
 .subnav {
-  /* display: none; */
-
-  /* transition: height var(--transition-slow); */
   height: 0;
-  /* position: relative; */
   overflow: hidden;
-  /* padding-block: 0; */
-  /* transition: all var(--transition-fast); */
 }
 
 .navigation__list-item.show-subnav .subnav {
-  /* display: block; */
-
   height: auto;
-  /* padding-block: 5px; */
 }
 
 .navigation__list-item.show-subnav .mobile__menu-arrow {
@@ -379,12 +352,10 @@ header {
 }
 
 .navigation__list-item.show-subnav .list__title a {
-  /* font-weight: var(--font-weight-semibold); */
   -webkit-text-stroke: 0.5px var(--text-color-dark);
 }
 
 .subnav__wrapper {
-  /* max-width: var(--max-width); */
   margin-inline: auto;
   padding-block: 10px;
 }
@@ -581,8 +552,6 @@ main {
     left: 0;
     right: 0;
     border-block-start: 1px solid var(--gray-medium-color);
-    /* box-sizing: content-box; */
-    /* z-index: 100; */
   }
 
   .country__switch-tablet,
@@ -608,7 +577,6 @@ main {
   .desktop__header {
     overflow: hidden;
     background-color: transparent;
-    /* height: calc(100vh - var(--header-height)); */
     position: absolute;
     width: 100vw;
 
@@ -650,11 +618,7 @@ main {
     width: 100%;
     left: 0;
     top: 60px;
-    /* height: var(--header-height); */
     background-color: var(--gray-light-color);
-    /* transition: all 350ms ease; */
-    /* transition-delay: 100ms; */
-    /* transition: all cubic-bezier(1,.01,1,.29); */
   }
 
   .subnav__list {
@@ -747,7 +711,6 @@ main {
   .navigation__list {
     display: flex;
     gap: 2rem;
-    /* align-items: center; */
     padding-inline: 0;
   }
 
@@ -772,7 +735,6 @@ main {
   }
 
   .desktop__link {
-    /* transition: font-weight var(--transition-fast); */
     -webkit-text-stroke: 0.5px transparent;
     height: 100%;
     display: flex;
@@ -781,7 +743,6 @@ main {
   }
 
   .desktop__link:hover {
-    /* font-weight: var(--font-weight-semibold); */
     -webkit-text-stroke: 0.5px var(--text-color-dark);
   }
 
@@ -809,8 +770,6 @@ main {
 
   .search__desktop-input-wrapper {
     position: relative;
-    /* width: 100%; */
-    /* height: 100%; */
   }
 
   .search__desktop-input {
@@ -849,9 +808,6 @@ main {
     display: none;
   }
 
-  .country__switch-desktop {
-  }
-
   .country__switch-desktop > button {
     display: flex;
     gap: 1rem;
@@ -868,14 +824,13 @@ main {
     line-height: var(--line-height-smaller);
     color: var(--gray-medium-color);
   }
-  
+
   .country__switch-desktop > button p:last-of-type {
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
   }
 
   .subnav {
-    /* height: var(--header-height); */
     top: var(--header-height);
     background-color: var(--gray-light-color);
   }

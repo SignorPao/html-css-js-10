@@ -25,14 +25,7 @@ const menuBtn = document.querySelector(".mobile__header-burger"),
 menuBtn.addEventListener("click", function () {
   burgerIcon.classList.toggle("open");
   links.classList.toggle("active");
-
-  // if (links.classList.contains("active")) {
-  //   body.classList.add("active");
-  // } else {
-  //   body.classList.remove("active");
-  // }
   body.classList.toggle("active");
-
   overlay.classList.toggle("active");
   subnavAccordionItems.forEach((item) => {
     let isShow = item.classList.contains("show-subnav");
@@ -87,8 +80,6 @@ logo.addEventListener("click", function () {
     overlay.classList.remove("active");
     searchMobileContainer.classList.remove("opened");
     burgerIcon.classList.remove("open");
-
-    // html.classList.remove("show-switch-country");
   }
   if (html.classList.contains("show-switch-country")) {
     html.classList.remove("show-switch-country");
@@ -178,7 +169,6 @@ switchMobile.addEventListener("click", function () {
     });
     burgerIcon.classList.remove("open");
   }
-
   if (switchCountrySection.classList.contains("active")) {
     html.classList.add("show-switch-country");
   } else {
@@ -223,8 +213,8 @@ switchDesktop.addEventListener("click", function () {
   }
 });
 
+// switch country section close
 switchCountryClose.addEventListener("click", function () {
   switchCountrySection.classList.remove("active");
-  // body.classList.remove("active");
   html.classList.remove("show-switch-country");
 });
