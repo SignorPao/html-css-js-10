@@ -695,19 +695,19 @@ p.txt {
 }
 
 /* electric */
-.electric {
+.electric-vehicle {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.electric__picture {
+.electric-vehicle__picture {
   position: relative;
   overflow: hidden;
   height: fit-content;
 }
 
-.electric__picture::before {
+.electric-vehicle__picture::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -715,27 +715,27 @@ p.txt {
   transition: background-color var(--transition-normal);
 }
 
-.electric:hover .electric__picture::before {
+.electric-vehicle:hover .electric-vehicle__picture::before {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.electric__picture img {
+.electric-vehicle__picture img {
   width: 100%;
   will-change: transform;
   transition: transform var(--transition-normal);
 }
 
-.electric:hover .electric__picture img {
+.electric-vehicle:hover .electric-vehicle__picture img {
   transform: var(--scale);
 }
 
-.electric__text {
+.electric-vehicle__text {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.electric .h3 {
+.electric-vehicle .h3 {
   font-size: calc(var(--font-size-normal) + 4px);
   line-height: calc(var(--line-height-normal) + 2px);
   font-weight: var(--font-weight-normal);
@@ -758,6 +758,9 @@ p.txt {
   margin-inline: auto;
 }
 
+.vehicle {
+}
+
 /*
   FOOTER
 */
@@ -767,7 +770,7 @@ p.txt {
 */
 @media screen and (min-width: 478px) {
   .banner__button,
-  .electric__button {
+  .electric-vehicle__button {
     max-width: 240px;
   }
 
@@ -803,16 +806,26 @@ p.txt {
     padding-inline-end: 1rem;
   }
 
-  .electric {
+  .electric-vehicle {
     flex-direction: row;
     gap: 2rem;
   }
 
-  .electric__text {
+  .electric-vehicle__text {
+    order: 1;
+    flex: 50%;
+  }
+
+  .electric-vehicle__picture {
+    order: 2;
+    flex: 50%;
+  }
+
+  .vehicle .electric-vehicle__picture {
     order: 1;
   }
 
-  .electric__picture {
+  .vehicle .electric-vehicle__text {
     order: 2;
   }
 }
@@ -956,14 +969,18 @@ p.txt {
     gap: 0.6rem;
   }
 
-  .electric__picture {
-    flex: 40%;
+  .electric-vehicle__picture {
+    flex: 45%;
   }
 
-  .electric__text {
-    flex: 60%;
+  .electric-vehicle__text {
+    flex: 55%;
     gap: 2rem;
     padding-inline-end: 3rem;
+  }
+
+  .vehicle .electric-vehicle__text {
+    padding: 0;
   }
 }
 
@@ -1012,11 +1029,11 @@ p.txt {
     margin-block-start: 1rem;
   }
 
-  .electric__picture {
+  .electric-vehicle__picture {
     flex: 50%;
   }
 
-  .electric__text {
+  .electric-vehicle__text {
     flex: 50%;
     padding-inline-end: 6rem;
   }
