@@ -102,6 +102,7 @@ html.show-switch-country {
   opacity: 1;
   will-change: opacity;
   transition: opacity var(--transition-normal);
+  text-align: center;
 }
 
 .button:hover {
@@ -684,13 +685,60 @@ main {
   font-weight: var(--font-weight-normal);
 }
 
-.article p {
+p.txt {
   font-weight: var(--font-weight-thin);
 }
 
 .small__txt {
   font-size: 11px;
   line-height: 14px;
+}
+
+/* electric */
+.electric {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.electric__picture {
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.electric__picture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: background-color var(--transition-normal);
+}
+
+.electric:hover .electric__picture::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.electric__picture img {
+  width: 100%;
+  will-change: transform;
+  transition: transform var(--transition-normal);
+}
+
+.electric:hover .electric__picture img {
+  transform: var(--scale);
+}
+
+.electric__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.electric .h3 {
+  font-size: calc(var(--font-size-normal) + 4px);
+  line-height: calc(var(--line-height-normal) + 2px);
+  font-weight: var(--font-weight-normal);
 }
 
 /*
@@ -701,7 +749,8 @@ main {
   MEDIA QUERIES
 */
 @media screen and (min-width: 478px) {
-  .banner__button {
+  .banner__button,
+  .electric__button {
     max-width: 240px;
   }
 }
@@ -732,6 +781,19 @@ main {
   .article__text {
     padding-inline-end: 1rem;
   }
+
+  .electric {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .electric__text {
+    order: 1;
+  }
+
+  .electric__picture {
+    order: 2;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -752,6 +814,7 @@ main {
 
     --header-height: 60px;
     --padding-inline: 42px;
+    --scale: scale(1.1);
   }
 
   .navigation::after {
@@ -869,9 +932,17 @@ main {
   }
 
   .article__text {
-    /* display: flex; */
-    /* flex-direction: column; */
     gap: 0.6rem;
+  }
+
+  .electric__picture{
+    flex: 40%;
+  }
+
+  .electric__text{
+    flex: 60%;
+    gap: 2rem;
+    padding-inline-end: 3rem;
   }
 }
 
@@ -888,6 +959,7 @@ main {
     --line-height-normal: 28px;
     /* --line-height-small: 18px; */
     /* --line-height-smaller: 16px; */
+    --margin-bottom: 8rem;
   }
 
   .h1,
@@ -917,6 +989,15 @@ main {
   .banner__button {
     border: 1px solid var(--white-color);
     margin-block-start: 1rem;
+  }
+
+  .electric__picture{
+    flex: 50%;
+  }
+
+  .electric__text{
+    flex: 50%;
+    padding-inline-end: 6rem;
   }
 }
 
