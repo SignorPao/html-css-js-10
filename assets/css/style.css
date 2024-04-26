@@ -98,7 +98,7 @@ html.show-switch-country {
   width: 100%;
   border: 1px solid var(--text-color-dark);
   background-color: transparent;
-  padding: 1rem;
+  padding: 1rem 2rem;
   opacity: 1;
   will-change: opacity;
   transition: opacity var(--transition-normal);
@@ -741,6 +741,23 @@ p.txt {
   font-weight: var(--font-weight-normal);
 }
 
+/* press */
+.press {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.press h2 {
+  text-align: center;
+}
+
+.press__button {
+  background-color: var(--text-color-dark);
+  color: var(--white-color);
+  margin-inline: auto;
+}
+
 /*
   FOOTER
 */
@@ -752,6 +769,10 @@ p.txt {
   .banner__button,
   .electric__button {
     max-width: 240px;
+  }
+
+  .press__button {
+    max-width: fit-content;
   }
 }
 
@@ -935,11 +956,11 @@ p.txt {
     gap: 0.6rem;
   }
 
-  .electric__picture{
+  .electric__picture {
     flex: 40%;
   }
 
-  .electric__text{
+  .electric__text {
     flex: 60%;
     gap: 2rem;
     padding-inline-end: 3rem;
@@ -991,11 +1012,11 @@ p.txt {
     margin-block-start: 1rem;
   }
 
-  .electric__picture{
+  .electric__picture {
     flex: 50%;
   }
 
-  .electric__text{
+  .electric__text {
     flex: 50%;
     padding-inline-end: 6rem;
   }
