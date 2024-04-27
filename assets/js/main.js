@@ -20,7 +20,12 @@ const menuBtn = document.querySelector(".mobile__header-burger"),
   switchCountrySection = document.querySelector(".switch__country"),
   switchCountryClose = document.querySelector(
     ".switch__country-close > button"
-  );
+  ),
+  footerAccordionItem = document.querySelectorAll(
+    ".footer__categories-list-item"
+  ),
+  footerSwitchLanguage = document.querySelector(".language__dropdown button"),
+  footerDropdown = document.querySelector(".language__dropdown ul");
 
 // mobile menu show / close
 menuBtn.addEventListener("click", function () {
@@ -231,4 +236,22 @@ document.addEventListener("click", function (e) {
       }
     });
   }
+});
+
+// footer accorion handler
+footerAccordionItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    let isItemOpen = item.classList.contains("active");
+    footerAccordionItem.forEach((item) => {
+      item.classList.remove("active");
+    });
+    if (!isItemOpen) {
+      item.classList.toggle("active");
+    }
+  });
+});
+
+// footer language switcher
+footerSwitchLanguage.addEventListener("click", () => {
+  footerDropdown.classList.toggle("active");
 });
