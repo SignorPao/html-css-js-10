@@ -78,7 +78,6 @@ html.show-switch-country {
   line-height: var(--line-height-bigger);
   letter-spacing: var(--letter-spacing-title);
   font-weight: var(--font-weight-thin);
-  /* font-stretch: expanded; */
 }
 
 .h2 {
@@ -1063,18 +1062,9 @@ footer {
   :root {
     --font-size-bigger: 46px;
     --font-size-big: 30px;
-    /* --font-size-normal: 16px; */
-    /* --font-size-small: 13px; */
-    /* --font-size-smaller: 11px; */
-
     --line-height-bigger: 54px;
     --line-height-big: 36px;
-    /* --line-height-normal: 26px; */
-    /* --line-height-small: 18px; */
-    /* --line-height-smaller: 16px; */
-
     --letter-spacing-title: 2px;
-
     --header-height: 60px;
     --padding-inline: 42px;
     --scale: scale(1.1);
@@ -1215,17 +1205,8 @@ footer {
 
 @media screen and (min-width: 1280px) {
   :root {
-    /* --font-size-bigger: 46px; */
-    /* --font-size-big: 21px; */
     --font-size-normal: 22px;
-    /* --font-size-small: 13px; */
-    /* --font-size-smaller: 11px; */
-
-    /* --line-height-bigger: 54px; */
-    /* --line-height-big: 30px; */
     --line-height-normal: 28px;
-    /* --line-height-small: 18px; */
-    /* --line-height-smaller: 16px; */
     --margin-bottom: 8rem;
   }
 
@@ -1272,16 +1253,8 @@ footer {
   :root {
     --font-size-bigger: 58px;
     --font-size-big: 38px;
-    /* --font-size-normal: 16px; */
-    /* --font-size-small: 13px; */
-    /* --font-size-smaller: 11px; */
-
     --line-height-bigger: 64px;
     --line-height-big: 44px;
-    /* --line-height-normal: 26px; */
-    /* --line-height-small: 18px; */
-    /* --line-height-smaller: 16px; */
-
     --letter-spacing-title: 2px;
   }
 
