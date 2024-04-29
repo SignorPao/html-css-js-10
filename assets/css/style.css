@@ -886,17 +886,20 @@ footer {
   margin-block-start: 1rem;
 }
 
-.meta__list a {
+.meta__list a,
+.author {
   transition: color var(--transition-fast);
 }
 
-.meta__list a:hover {
+.meta__list a:hover,
+.author:hover {
   color: var(--text-hover);
 }
 
 .language__switch {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .language__switch img {
@@ -1247,6 +1250,10 @@ footer {
     flex: 50%;
     padding-inline-end: 6rem;
   }
+
+  .vehicle .electric-vehicle__text {
+    padding-inline-start: 6rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -1276,6 +1283,10 @@ footer {
 
   .desktop__header {
     display: block;
+    height: var(--header-height);
+  }
+
+  .desktop__header.double {
     height: calc(var(--header-height) * 2);
   }
 
@@ -1319,10 +1330,32 @@ footer {
     display: flex;
     align-items: center;
     transition: all var(--transition-fast);
+    position: relative;
   }
 
-  .desktop__link:hover {
-    -webkit-text-stroke: 0.5px var(--text-color-dark);
+  .navigation__list li:not(:first-child) .desktop__link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color-dark);
+    transition: width var(--transition-fast);
+  }
+
+  .navigation__list li:not(:first-child) .desktop__link:hover::after {
+    width: 100%;
+  }
+
+  .navigation__list-item.show-subnav .desktop__link::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    background-color: var(--text-color-dark) !important;
   }
 
   .desktop__header-logo a {
@@ -1416,13 +1449,45 @@ footer {
 
   .subnav__wrapper {
     max-width: var(--max-width);
-    height: 100%;
     background-color: inherit;
+    padding: 0;
+    height: var(--header-height);
   }
 
   .subnav__list {
     height: 100%;
     padding: 0 0 0 100px;
+  }
+
+  .subnav__list-item {
+    height: 100%;
+    padding: 0;
+  }
+
+  .subnav__desktop-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .subnav__desktop-link:hover {
+    -webkit-text-stroke: 0.5px var(--text-color-dark);
+  }
+
+  .subnav__desktop-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color-dark);
+    transition: width var(--transition-fast);
+  }
+
+  .subnav__desktop-link:hover::after {
+    width: 100%;
   }
 
   .section__country-wrapper {
@@ -1438,8 +1503,25 @@ footer {
     padding-inline: 0;
   }
 
-  .footer__wrapper {
+  .footer__meta .footer__wrapper {
     padding-inline: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .meta__list {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .meta__list li {
+    padding: 0;
+  }
+
+  .footer__meta-links {
+    flex-direction: row;
+    align-items: center;
   }
 
   .footer__categorie-title,

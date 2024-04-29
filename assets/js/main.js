@@ -128,6 +128,7 @@ subnavAccordionItems.forEach((item) => {
     );
     if (!isItemOpen) {
       item.classList.toggle("show-subnav");
+      links.classList.add("double");
       if (window.innerWidth > 1440) {
         overlay.classList.add("active");
       }
@@ -135,6 +136,7 @@ subnavAccordionItems.forEach((item) => {
       if (window.innerWidth > 1440) {
         overlay.classList.remove("active");
       }
+      links.classList.remove("double");
     }
   });
 });
@@ -151,6 +153,7 @@ logoDesktop.addEventListener("click", function () {
     }
   });
   desktopSearchInput.classList.remove("expanded");
+  links.classList.remove("double");
 });
 
 // desktop search input expanded
@@ -229,6 +232,7 @@ switchCountryClose.addEventListener("click", function () {
 document.addEventListener("click", function (e) {
   if (!navigation.contains(e.target)) {
     overlay.classList.remove("active");
+    links.classList.remove("double");
     subnavAccordionItems.forEach((item) => {
       let isShow = item.classList.contains("show-subnav");
       if (isShow) {
@@ -255,3 +259,10 @@ footerAccordionItem.forEach((item) => {
 footerSwitchLanguage.addEventListener("click", () => {
   footerDropdown.classList.toggle("active");
 });
+
+// this year
+let timeContainer = document.querySelector(".copyright time"),
+  thisYear = new Date().getFullYear();
+if (thisYear > 2024) {
+  timeContainer.innerHTML = `2024 - ${thisYear}`;
+}
